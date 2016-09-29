@@ -54,14 +54,14 @@ public class RecyclerBindingAdapter<T> extends BaseRecyclerAdapter<T, RecyclerBi
         public BindingHolder(View itemView) {
             super(itemView);
             binding = DataBindingUtil.bind(itemView);
-            if (onItemClickListener != null) {
-                binding.getRoot().setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener != null) {
                         onItemClickListener.onItemClick(getAdapterPosition());
                     }
-                });
-            }
+                }
+            });
         }
 
         public ViewDataBinding getBinding() {
