@@ -17,6 +17,7 @@ public abstract class BindingFragment<V extends ViewDataBinding, T extends ViewM
     protected V binding;
     protected T viewModel;
     protected abstract T createViewModel();
+    protected abstract void initViews();
 
     @Nullable
     @Override
@@ -28,6 +29,7 @@ public abstract class BindingFragment<V extends ViewDataBinding, T extends ViewM
             binding.setVariable(getBindingConfig().getVariableName(), viewModel);
             viewModel.onViewAttached();
         }
+        initViews();
 
         return binding.getRoot();
     }
