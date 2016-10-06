@@ -1,11 +1,11 @@
 package sharedlibrary.mvvm;
 
-import android.app.Activity;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 
 /**
@@ -37,7 +37,7 @@ public abstract class BindingActivity<V extends ViewDataBinding, T extends ViewM
     }
 
     @Override
-    public Activity getActivity() {
+    public FragmentActivity getActivity() {
         return this;
     }
 

@@ -1,10 +1,10 @@
 package sharedlibrary.mvvm;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.annotation.CallSuper;
 import android.support.annotation.StringRes;
+import android.support.v4.app.FragmentActivity;
 
 import rx.Subscription;
 
@@ -46,7 +46,7 @@ public abstract class ViewModel {
         return view != null ? view.getContext() : null;
     }
 
-    public Activity getActivity() {
+    public FragmentActivity getActivity() {
         return view != null ? view.getActivity() : null;
     }
 
